@@ -27,7 +27,7 @@ pipeline{
         steps{  
             script {
                 docker.withRegistry( 'http://'+registry, registryCredentials ) {
-                dockerImage.push('latest')
+                dockerImage.push('alpha')
                     }
                 }
             }
@@ -36,7 +36,7 @@ pipeline{
         stage('notify web2 prod'){
             steps{
                 script{
-                    sh 'ssh -i ~/.ssh/Rose.pem ec2-user@3.8.19.161 "sudo bash deployconfig2.sh"' 
+                    sh 'ssh -i ~/.ssh/Rose.pem ec2-user@3.11.70.201 "sudo bash deployconfig2.sh"' 
                 }
             }
         }

@@ -4,10 +4,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class RealizationController {
+public class RestlessController {
 
     @GetMapping(value = "")
-    String requestTask(){
+    String Hello(){
         return "Hello World 1";
     }
 }
